@@ -1,0 +1,29 @@
+ul,
+li {
+  box-sizing: border-box;
+}
+.list-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  max-width: 1000px;
+  width: auto;
+}
+.list-box > li {
+  width: 270px;
+  height: 270px;
+
+  border: 1px red solid;
+}
+.list-box > li > a {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
