@@ -3,6 +3,7 @@ import About from "./routes/About";
 import Home from "./routes/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Grid from "./components/Grid";
+import Image from "./components/Image";
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Image />
       <Grid />
     </Router>
   );
