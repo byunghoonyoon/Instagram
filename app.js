@@ -44,7 +44,17 @@ app.use(cors());
 //   console.log(`Example app listening on port ${port}`);
 // });
 
+app.use(express.json());
 const port = 3001;
+const pool = mysql.createPool({
+  host: "localhost",
+  user: "sbsst",
+  password: "sbs123414",
+  database: "a9",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
 app.use(express.static("public"));
 const storage = multer.diskStorage({
   destination: "./public/img/",

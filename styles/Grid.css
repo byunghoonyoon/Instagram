@@ -10,6 +10,8 @@ li {
 .con {
   max-width: 935px;
   height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .list-box {
@@ -25,7 +27,8 @@ li {
 .list-box > li {
   position: relative;
   width: 100%;
-  height: 100%;
+
+  max-height: 293px;
   display: flex;
   flex-direction: column;
   min-width: 230px;
@@ -34,15 +37,18 @@ li {
   display: block;
   width: 100%;
   height: 100%;
+
+  min-width: 230px;
+  max-height: 293px;
 }
 
 img {
   display: block;
   width: 100%;
+  height: auto;
   object-fit: cover;
+  max-height: 293px;
   min-width: 230px;
-  aspect-ratio: 1;
-  overflow: hidden;
 }
 .section-2 > ul > li > a::before {
   background-color: rgba(0, 0, 0, 0);
