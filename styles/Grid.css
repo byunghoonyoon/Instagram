@@ -9,7 +9,7 @@ li {
 }
 .con {
   max-width: 935px;
-  height: 100vh;
+  height: 140vh;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -28,6 +28,7 @@ li {
   position: relative;
   width: 100%;
 
+  overflow: hidden;
   max-height: 293px;
   display: flex;
   flex-direction: column;

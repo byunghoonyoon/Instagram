@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "http://localhost:3002";
 
-const Image = () => {
+const Image = ({ images, setImages }) => {
   const [content, setContent] = useState("");
   const [uploadedImg, setUploadedImg] = useState({
     fileName: "",
@@ -24,10 +24,10 @@ const Image = () => {
     const formData = new FormData();
     formData.append("img", content);
     axios
-      .post("http://localhost:3001/upload", formData)
+      .post("http://localhost:3002/upload", formData)
       .then((res) => {
         const { fileName } = res.data;
-        console.log(fileName);
+
         setUploadedImg({ fileName });
         alert("The file is successfully uploaded");
       })
@@ -35,25 +35,30 @@ const Image = () => {
         console.error(err);
       });
   };
+
   return (
     <div>
       <form
         onSubmit={onSubmit}
         style={{
           display: "inline-block",
-          border: "1px red solid",
         }}
       >
-        <div onClick={fileAdd} id="uploadDiv">
-          <input id="fileAdd" type="file" onChange={onChange} />
+        <div id="uploadDiv">
+          <input
+            id="fileAdd"
+            type="file"
+            onChange={onChange}
+            style={{
+              cursor: "pointer",
+              border: "1px red solid",
+            }}
+          />
         </div>
-        <button type="submit">Upload</button>
+        <input type="submit" value="Upload" className="btn" />
       </form>
     </div>
   );
 };
 export default Image;
 // 문제점 1.이미지를 업로드 해도 02.jpg처럼 파일명이 그대로남아있음.
-// 2. 스크롤 바가 두개임.
-// 3. 이미지 업로드한건 public / img 폴더에 잘 들어가긴 하는데,
-// 이를 어떻게 회원별로 구분할지.(구분이 필요한가?)
