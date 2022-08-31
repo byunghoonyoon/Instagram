@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import About from "./routes/About";
 import Home from "./routes/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Grid from "./components/Grid";
 import Image from "./components/Image";
 import axios from "axios";
-import { useEffect } from "react";
+
 function App() {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
@@ -19,7 +19,7 @@ function App() {
         });
         setIsLoading(false);
         setImages(image.data); // -> 객체배열.
-        // console.log(image.data[0].imgSrc);
+        console.log(image.data);
       } catch (e) {
         setError(e);
       }
