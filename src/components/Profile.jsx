@@ -3,7 +3,7 @@ import "../styles/profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function Profile() {
+function Profile({ logined, setLogined }) {
   return (
     <div className="flex-col flex  h-128 Profiles">
       <div className="flex h-3/5 ">
@@ -32,7 +32,7 @@ function Profile() {
           </div>
 
           <div className="h-1/5">
-            <div className=" h-16 ">
+            <div className=" h-16 whitespace-nowrap">
               <a href="" className="mr-20">
                 게시물
                 <span

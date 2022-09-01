@@ -10,19 +10,36 @@ import Head from "../components/Head";
 import Profile from "../components/Profile";
 import Layout from "../layouts/Layout";
 
-const Home = ({ onLoginToggle, setLoginToggle, loginToggle }) => {
-  const logined = useRecoilValue(authenticatedState);
+const Home = ({
+  onLoginToggle,
+  setLoginToggle,
+  loginToggle,
+  onLogin,
+  logined,
+  setLogined,
+}) => {
   return (
     <div>
-      <Head onLoginToggle={onLoginToggle} setLoginToggle={setLoginToggle} />
+      <Head
+        onLoginToggle={onLoginToggle}
+        setLoginToggle={setLoginToggle}
+        logined={logined}
+        setLogined={setLogined}
+      />
       <Layout>
-        <Profile />
+        <Profile logined={logined} setLogined={setLogined} />
       </Layout>
       {loginToggle && (
-        <Login onLoginToggle={onLoginToggle} setLoginToggle={setLoginToggle} />
+        <Login
+          onLoginToggle={onLoginToggle}
+          setLoginToggle={setLoginToggle}
+          onLogin={onLogin}
+          logined={logined}
+          setLogined={setLogined}
+        />
       )}
-      <Image />
-      <Grid />
+      <Image logined={logined} setLogined={setLogined} />
+      <Grid logined={logined} setLogined={setLogined} />
     </div>
   );
 };

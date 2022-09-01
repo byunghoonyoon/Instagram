@@ -13,6 +13,7 @@
 }
 .Topbar {
   border-bottom: 1.5px rgb(209, 209, 209) solid;
+  background: white;
   position: sticky;
   top: 0%;
   z-index: 9999;
