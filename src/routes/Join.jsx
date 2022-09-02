@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Join.css";
-const Join = ({ joinMember, onLoginToggle }) => {
+const Join = () => {
   const [idValue, setIdValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [phoneValue, setPhoneValue] = useState("");
   const [nameValue, setNameValue] = useState("");
-  const [completeToggle, setCompleteToggle] = useState(false);
   const onIdChange = (e) => {
-    setIdValue(e.target.value);
+    setIdValue(e.target.Value);
   };
   const onPasswordChange = (e) => {
-    setPasswordValue(e.target.value);
+    setPasswordValue(e.target.Value);
   };
   const onNameChange = (e) => {
-    setNameValue(e.target.value);
+    setNameValue(e.target.Value);
   };
   const onPhoneChange = (e) => {
-    setPhoneValue(e.target.value);
+    setPhoneValue(e.target.Value);
   };
 
   return (
@@ -34,64 +33,41 @@ const Join = ({ joinMember, onLoginToggle }) => {
         <div className="joinBar_span">
           <span>친구들의 사진과 동영상을 보려면 가입하세요.</span>
         </div>
-        <div className="joinMemberBtn">
+        <div className="joinInput">
           <input
             type="text"
             placeholder="휴대폰 번호 또는 이메일 주소"
-            onChange={onPhoneChange}
             value={phoneValue}
+            onChange={onPhoneChange}
           />
           <input
-            type="text"
+            type="Password"
             placeholder="성명"
-            onChange={onNameChange}
             value={nameValue}
+            onChange={onNameChange}
           />
           <input
             type="text"
             placeholder="아이디"
-            onChange={onIdChange}
             value={idValue}
+            onChange={onIdChange}
           />
           <input
-            type="password"
+            type="Password"
             placeholder="비밀번호"
-            onChange={onPasswordChange}
             value={passwordValue}
+            onChange={onPasswordChange}
           />
         </div>
         <div className="joinButton">
           <button
             onClick={() => {
-              if (
-                nameValue.length > 0 &&
-                phoneValue.length > 0 &&
-                idValue.length > 0 &&
-                passwordValue.length > 0
-              ) {
-                joinMember(nameValue, phoneValue, idValue, passwordValue);
-
-                setCompleteToggle(!completeToggle);
-              } else {
-                window.alert("입력 내용을 확인해주세요");
-              }
+              Join();
             }}
           >
             가입하기
           </button>
         </div>
-        {completeToggle && (
-          <div className="joinComplete">
-            {" "}
-            <a href="/#">
-              가입이 완료되었습니다.
-              <br />
-              "이 곳"을 누른 후
-              <br />
-              홈페이지에서 로그인 해주세요
-            </a>{" "}
-          </div>
-        )}
       </div>
     </div>
   );

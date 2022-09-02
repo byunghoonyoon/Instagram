@@ -5,10 +5,7 @@ const Head = ({ setLoginToggle, onLoginToggle, logined, setLogined }) => {
     <div className="Topbar">
       <div className="navbar bg-base-100 Topbar_logo">
         <div className="flex-1">
-          <a
-            href="http://localhost:3000/"
-            className="btn btn-ghost normal-case text-xl"
-          >
+          <a href="/#" className="btn btn-ghost normal-case text-xl">
             instargram
           </a>
         </div>

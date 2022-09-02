@@ -47,6 +47,7 @@ function App() {
       // {
       //   a = 5 ? console.log("a=5입니다") : console.log("a=5가 아닙니다.");
       // }
+      // auto_increment 하는 유저 번호가 필요할까??
       setLogined(data.data.authenticated);
       onLoginToggle();
       console.log(logined);
@@ -118,14 +119,16 @@ function App() {
 }
 
 export default App;
+
 // Git 작업순서
 // 1.git init (git 폴더생성. 초기화?)
 // 2.git remote -v  -> https://github.com/byunghoonyoon/???  아마 다르게 나올거임.
 // 3.git remote set-url origin https://github.com/byunghoonyoon/Instagram
 // 위 3번으로 인해 원격저장소가 제 git으로 지정됩니다.
 // 4.다시 2번 실행후, git remote set-url origin https://github.com/byunghoonyoon/Instagram 잘나오는지 확인
-// 5.git config --global user.name"Github ID" -> Github Id에 Github 이름쓰세요
-// 6.git config --global user.email "Github Email" -> Github 로그인하는 이메일 쓰세요
+// 5.git config --global user.name"byunghoonyoon" -> Github Id에 Github 이름쓰세요
+// 6.git config --global user.email "qudgns0218@gmail.com" -> Github 로그인하는 이메일 쓰세요
+// 무시하세요 https://github.com/SBS-Instagram/Instagram
 // 7-1. Windows라면 git config --global core.autocrlf true
 // 7-2. Mac이라면 git config --global core.autocrlf input
 // 8. git add .
